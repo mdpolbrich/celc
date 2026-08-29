@@ -238,7 +238,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  width: 100%;
 }
 
 .about-card-icons {
@@ -259,24 +259,40 @@ body {
   .about-card-icons { display: flex; }
 }
 
-.about-image {
-  overflow: hidden;
-  border-radius: 12px;
-}
-
 .about-img-main {
   width: 100%;
   max-width: 480px;
   object-fit: contain;
-  border-radius: 12px;
   display: block;
-  margin: 0 auto;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.14);
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.22));
   transition: transform 0.3s ease-out;
 }
 
 .about-img-main:hover {
   transform: scale(1.05);
+}
+
+/* Price block: sits under the box as one unit */
+.about-price {
+  text-align: center;
+  /* the asset carries transparent padding below the box; close the visual gap */
+  margin-top: -4%;
+}
+
+.about-price-value {
+  display: block;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  color: var(--light);
+}
+
+.about-price-note {
+  margin: 0.4rem 0 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .about-img-overlay {
