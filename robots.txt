@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://unacosachevere.com/sitemap.xml
