@@ -241,6 +241,13 @@ body {
   width: 100%;
 }
 
+/* Single column: the asset carries ~25% transparent padding above the box
+   (only the parrot occupies it), which otherwise doubles the button-to-product
+   gap. Pull it up so the gap matches the section's other spacing. */
+@media (max-width: 1023px) {
+  .about-image { margin-top: -12%; }
+}
+
 .about-card-icons {
   display: none;
   flex-direction: row;
