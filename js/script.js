@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
 // TWO-STEP CHECKOUT FLOW
 // =============================
 
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxVFdjOct3DEquJWSpoz-UTjQmXjSyWYGPyi73djIFtAkA1IYHtTtr7IFtRs8UunV47/exec"
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxc05C5uRfUvoneqiMAczs95SdY6SDUbcrQ0JFmW3vQLj8y9-cXUj6abT7IncFg--Mv/exec"
 
 const AMAZON_LINKS = {
   US: "https://a.co/d/0iy1aP2g",
@@ -32,7 +32,7 @@ const PRICING = {
   US: { product: 39.99, shipping: 4.99, currency: "USD", symbol: "$" },
   CA: { product: 39.99, shipping: 6.99, currency: "USD", symbol: "$" },
   MX: { product: 39.99, shipping: 4.99, currency: "USD", symbol: "$" },
-  VE: { product: 34.99, shipping: 0.0, currency: "USD", symbol: "$" },
+  VE: { product: 39.99, shipping: 0.0, currency: "USD", symbol: "$" },
   ES: { product: 29.99, shipping: 0.0, currency: "EUR", symbol: "€" },
   DE: { product: 29.99, shipping: 0.0, currency: "EUR", symbol: "€" },
   UK: { product: 29.99, shipping: 0.0, currency: "GBP", symbol: "£" },
@@ -149,13 +149,13 @@ function hasShippingAvailable(countryCode) {
 function getEsShipping() {
   const selected = document.querySelector('input[name="esShipping"]:checked')
   if (!selected || selected.value !== "delivery") return 0
-  return quantity > 6 ? 11.5 : 9.5
+  return quantity > 6 ? 11.5 : 5.99
 }
 
 function getDeShipping() {
   const selected = document.querySelector('input[name="deShipping"]:checked')
   if (!selected || selected.value !== "delivery") return 0
-  return quantity > 6 ? 11.5 : 9.5
+  return quantity > 6 ? 11.5 : 5.99
 }
 
 function getVeShipping() {
