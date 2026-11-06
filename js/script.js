@@ -87,19 +87,18 @@ function updateStep1Subtotal() {
     return
   }
   if (wrapper) wrapper.style.display = ""
+  // Price comes from PRICING so this label can't drift from the step 2 breakdown
+  const unit = PRICING[code] ? PRICING[code].product : 0
   let unitLabel, totalStr
   if (code === "ES" || code === "DE") {
-    unitLabel = "29,99€"
-    totalStr = (29.99 * quantity).toFixed(2).replace(".", ",") + "€"
+    unitLabel = unit.toFixed(2).replace(".", ",") + "€"
+    totalStr = (unit * quantity).toFixed(2).replace(".", ",") + "€"
   } else if (code === "UK") {
-    unitLabel = "£29.99"
-    totalStr = "£" + (29.99 * quantity).toFixed(2)
-  } else if (code === "VE") {
-    unitLabel = "$34.99 USD"
-    totalStr = "$" + (34.99 * quantity).toFixed(2) + " USD"
+    unitLabel = "£" + unit.toFixed(2)
+    totalStr = "£" + (unit * quantity).toFixed(2)
   } else {
-    unitLabel = "$39.99 USD"
-    totalStr = "$" + (39.99 * quantity).toFixed(2) + " USD"
+    unitLabel = "$" + unit.toFixed(2) + " USD"
+    totalStr = "$" + (unit * quantity).toFixed(2) + " USD"
   }
   label.textContent = `${quantity} × ${unitLabel}`
   total.textContent = totalStr
